@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import { StackActions, NavigationActions } from 'react-navigation'
+import { Image } from 'react-native'
+// import { StackActions, NavigationActions } from 'react-navigation'
 import { StatusBar, ActivityIndicator, AsyncStorage } from 'react-native'
-import PropTypes from 'prop-types'
 
-import api from '../../services/api'
+import axios from 'axios'
+
+import ImagemLogo from '../../assets/logo_login.png'
 
 import {
   Container,
@@ -14,16 +16,18 @@ import {
   Input,
   Button,
   ButtonText,
+  Logo
 } from './styles'
 
-export default function Welcome(props) {
+export default function Logon({ navigation }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState(null)
 
-  async function saveUser(user) {
-    await AsyncStorage.setItem('@ListApp:userToken', JSON.stringify(user))
+  async function saveAuth(acessToken, refreshToken) {
+    await AsyncStorage.setItem('@ListApp:acessToken', JSON.stringify(acessToken))
+    await AsyncStorage.setItem('@ListApp:refreshToken', JSON.stringify(refreshToken))
   }
 
   async function signIn() {
@@ -34,29 +38,31 @@ export default function Welcome(props) {
     try {
 
       const credentials = {
-        email: username,
+        username: username,
         password: password
       }
+      
+      const response = await axios.post('http://192.168.0.47:8000/core/token/obtain/', credentials , {
+        headers: {
+            'Content-Type': 'application/json'
+        }})
+        
+      
 
-      const response = await api.post('/sessions', credentials)
+      const acessToken = response.data.access
+      const refreshToken = response.data.refresh
 
-      const user = response.data
+      saveAuth(acessToken, refreshToken)
 
-      await saveUser(user)
-
-      const resetAction = StackActions.reset({
-        index: 0,
-        actions: [NavigationActions.navigate({ routeName: 'App' })],
-      })
-
+      navigation.navigate('AuthLogon')
       setLoading(false)
-
-      props.navigation.dispatch(resetAction)
+        
     } catch (err) {
       console.log(err)
-
+      console.log(navigation)
       setLoading(false)
-      setErrorMessage('Usuário não existe')
+      setErrorMessage('Não foi possível fazer login')
+      
     }
   }
 
@@ -64,6 +70,11 @@ export default function Welcome(props) {
     <Container>
       <StatusBar barStyle="light-content" />
 
+      <Logo>
+        <Image source={ImagemLogo} />
+      </Logo>
+         
+     
       <Title>Bem-vindo</Title>
       <TextInformation>
         Para continuar, precisamos que você informe seu usuário
@@ -103,14 +114,3 @@ export default function Welcome(props) {
   )
 }
 
-Welcome.navigationOptions = () => {
-  return {
-    header: null,
-  }
-}
-
-Welcome.propTypes = {
-  navigation: PropTypes.shape({
-    dispatch: PropTypes.func,
-  }).isRequired,
-}

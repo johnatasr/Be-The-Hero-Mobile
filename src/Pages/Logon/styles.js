@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 export const Container = styled.View`
   display: flex;
   flex: 1;
-  background-color: #444a5a;
+  background-color: #737380;
   padding: 40px;
   justify-content: center;
   align-items: stretch;
@@ -25,7 +25,7 @@ export const TextInformation = styled.Text`
 `;
 
 export const Error = styled.Text`
-  color: #e37a7a;
+  color: #e02041;
   text-align: center;
   margin-top: 10px;
 `;
@@ -43,7 +43,7 @@ export const Input = styled.TextInput`
 `;
 
 export const Button = styled.TouchableOpacity`
-  background-color: #7a91ca;
+  background-color: #e02041;
   border-radius: 3px;
   height: 44px;
   padding: 0px 20px;
@@ -56,4 +56,9 @@ export const ButtonText = styled.Text`
   color: #ffffff;
   font-weight: bold;
   font-size: 14px;
+`;
+
+export const Logo = styled.View`
+  margin-bottom: 40px;
+  margin-left: 10%;
 `;

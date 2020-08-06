@@ -1,24 +1,53 @@
 import api from '../services/api'
+import { AsyncStorage } from 'react-native';
 
 export default class IncidentsService{
+    constructor(){
 
-    constructor(){}
+    }
+    
+    async getTokenHeader() {
+        const token = await AsyncStorage.getItem('@ListApp:acessToken');
+        const JWTString = 'JWT ' + token
+        console.log(JWTString)
+        const contentType = 'application/json'
+        const header =  {
+            Authorization: JWTString.replace(/[\\"]/g, ''),
+        }
+        return header
+    }
 
     async getIncidents(id, page) {
+        const header = await getTokenHeader();
         const data = await api.get(`api/incidents/listIncidents/`, { 
             params: {
                 page: page,
                 id: id
-            }});      
+            }, 
+            headers: header
+            });      
         return data
     }
-    // getCustomersByURL(link){
-    //     const url = `${API_URL}${link}`;
-    //     return axios.get(url).then(response => response.data);
-    // }
+    
+    async getAllIncidents(page) {
+        const token = await AsyncStorage.getItem('@ListApp:acessToken');
+        const JWTString = 'JWT ' + token
+        const header =  {
+            Authorization: JWTString.replace(/[\\"]/g, ''),
+        }
+        console.log(header)
+        const data = await api.get(`api/incidents/allIncidents/`, { 
+            params: {
+                page: page,
+            },
+            headers: header
+        });      
+
+        console.log(data)
+        return data
+    }
 
     async deleteIncident(id, ong){
-        const tess = 1 ;
         await api.delete('api/incidents/delete_incident/', { 
             params: {
                 ong: ong,

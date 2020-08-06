@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import IncidentServices from '../../services/incidentsServices';
+import IncidentService from '../../services/incidentsServices';
 import logoImg from '../../assets/logo.png';
 
 import styles from './styles';
 
-const incidentServices =  new IncidentServices();
+const incidentService =  new IncidentService();
 
 export default function Incidents() {
 
@@ -18,11 +18,9 @@ export default function Incidents() {
     const [ incidents, setIncidents ] = useState([]);
     const [ total, setTotal ] = useState('0');
     const [ msg, setMsg ] = useState('');
-    const id = 'utxs';
-
+    
     async function loadIncidents() {
         try {
-
             if (loading){
                 return;
             } 
@@ -32,7 +30,8 @@ export default function Incidents() {
             }
 
             setLoading(true);
-            const response = await incidentServices.getIncidents(id, page)
+            const response = await incidentService.getAllIncidents(page)
+            
             setIncidents([...incidents, ...response.data.incidents]);
             setTotal(response.data.total);
             setPage(page + 1);
@@ -82,9 +81,7 @@ export default function Incidents() {
 
                         <Text style={styles.incidentProperty}>Valor:</Text>
                         <Text style={styles.incidentValue}>
-                            {Intl.NumberFormat('pt-BR', { 
-                                style: 'currency', 
-                                currency: 'BRL'}).format(incident.value)}
+                           {incident.value}
                         </Text>
 
                         <TouchableOpacity
@@ -96,7 +93,12 @@ export default function Incidents() {
                         </TouchableOpacity>
                     </View>
                 )}
-            />
+            />         
         </View>
     );
 } 
+
+
+// {Intl.NumberFormat('pt-BR', { 
+//     style: 'currency', 
+//     currency: 'BRL'}).format(incident.value)}
