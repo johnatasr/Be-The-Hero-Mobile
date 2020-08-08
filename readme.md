@@ -4,7 +4,7 @@
 <p align="center">
   
   
-  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/1.png" style="height=50%; width=50%;">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/1.png" style="width: 250px;">
   <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/2.png">
   <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/3.png">
   <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/4.png">
