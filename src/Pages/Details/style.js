@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import React from 'react';
 import Constants from 'expo-constants';
 
+
 export default StyleSheet.create({
     container: {
         flex: 1,
@@ -75,6 +76,27 @@ export default StyleSheet.create({
         color: '#fff',
         fontSize: 15,
         fontWeight: 'bold'
+    },
+
+    inputDoar: {
+        padding: 10,
+        marginTop: 10
+    },
+
+    botaoDoar: {
+        textAlign: 'center',
+        marginLeft: 140
+    },
+
+    textDoar: {
+        marginLeft: 40,
+        fontSize: 30
+    },
+
+    errorMsgDoar: {
+        marginLeft: 40,
+        fontSize: 15,
+        color: "#E02041"
     }
 
 });

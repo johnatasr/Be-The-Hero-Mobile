@@ -27,7 +27,7 @@ export default StyleSheet.create({
     title: {
         fontSize: 30,
         marginBottom: 16,
-        marginTop: 48,
+        marginTop: 20,
         color: '#13131a',
         fontWeight: 'bold'
     },
@@ -39,7 +39,7 @@ export default StyleSheet.create({
     },
 
     incidentList: {
-        marginTop: 32,
+        marginTop: 25,
     },
 
     incident: {
@@ -81,9 +81,11 @@ export default StyleSheet.create({
         color: 'white',
         fontSize: 36,
         fontWeight: 'bold'
+    },
+
+    divSearch: {
+        flexDirection: 'row'
     }
-
-
 
 });
   
