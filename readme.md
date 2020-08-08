@@ -4,13 +4,16 @@
 <p align="center">
   
   
-  <!-- <img alt="GitHub last commit" src="https://github.com/johnatasr/Fake-Instagram-FeedPost/blob/master/Screens/1.PNG"> -->
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/1.png">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/2.png">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/3.png">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/4.png">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/5.png">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/6.png">
  
-  
-
 </p>
 
-Projeto desenvolvido inicialmente com o curso da Rocketseat, não terminado por mim, então tempos depois decidi incrementar algumas coisas, resolvi mudar o Backend de NodeJS para Django, onde foi elaborada uma melhoria na API , criada a autenticação de usuários via JWT, foi implementado um módulo para ser usado o Elastisearch como ferramenta de busca, porém seria usar um canhão para matar uma formiga, deixei lá caso seja necessário basta habilitar junto a instância do Elastic, logo, temos um mecanismo de busca, o usuário administrador pode ter mais de uma ONG com seus respectivos incidentes.
+Projeto desenvolvido inicialmente com o curso da Rocketseat, não terminado por mim, então tempos depois decidi incrementar algumas coisas, resolvi mudar o Backend de NodeJS para Django, onde foi elaborada uma melhoria na API , criada a autenticação de usuários via JWT, foi implementado um módulo para ser usado o Elastisearch como ferramenta de busca, porém seria usar um canhão para matar uma formiga, deixei lá caso seja necessário basta habilitar junto a instância do Elastic, logo, temos um mecanismo de busca, o usuário administrador também pode ter mais de uma ONG com seus respectivos incidentes e algumas incrementações na interatividade das páginas.
 
 A parte mobile foi desenvolvida com React Native, ultilizando o ReactNavitation para criar as rotas entre as telas, Axios em requisições HTTP para o servidor no Heroku, Expo para gerenciar o ambiente de desenvolvimento e alguns componentes de estilização. Basicamente são telas simples mas com algumas funcionalidades como login, listar incidentes, pesquisar incidentes, detalhar e fazer o processo de doação.
 
