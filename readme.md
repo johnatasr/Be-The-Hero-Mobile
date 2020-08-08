@@ -5,11 +5,11 @@
   
   
   <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/1.png" width="250">
-  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/2.png">
-  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/3.png">
-  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/4.png">
-  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/5.png">
-  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/6.png">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/2.png" width="250">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/3.png" width="250">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/4.png" width="250">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/5.png" width="250">
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/Be-The-Hero-Mobile/blob/master/screens/6.png" width="250">
  
 </p>
 
