@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-
 import { View, AsyncStorage, ActivityIndicator } from 'react-native';
 
 export default function AuthLoadingScreen(props) {

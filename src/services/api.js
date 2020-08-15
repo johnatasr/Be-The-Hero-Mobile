@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'http://192.168.0.47:8000/',
+    baseURL: 'https://betheherodjango.herokuapp.com/',
     timeout: 5000,
 })
 api.interceptors.response.use(

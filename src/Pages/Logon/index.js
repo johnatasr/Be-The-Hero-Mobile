@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Image } from 'react-native'
-// import { StackActions, NavigationActions } from 'react-navigation'
 import { StatusBar, ActivityIndicator, AsyncStorage } from 'react-native'
 
 import axios from 'axios'
@@ -42,7 +41,7 @@ export default function Logon({ navigation }) {
         password: password
       }
       
-      const response = await axios.post('http://192.168.0.47:8000/core/token/obtain/', credentials , {
+      const response = await axios.post('https://betheherodjango.herokuapp.com/core/token/obtain/', credentials , {
         headers: {
             'Content-Type': 'application/json'
         }})
