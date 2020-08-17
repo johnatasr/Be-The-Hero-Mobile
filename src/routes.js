@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 const AppStack = createStackNavigator();
 
 import Logon from './Pages/Logon'
+import Register from './Pages/Register'
 import AuthLogon from './Pages/Logon/authLoading'
 import Incidents from './Pages/Incidents';
 import Details from './Pages/Details';
@@ -15,6 +16,7 @@ export default function Routes() {
         <NavigationContainer>
             <AppStack.Navigator screenOptions={{headerShown: false}} >
                 <AppStack.Screen name="Logon" component={Logon} />
+                <AppStack.Screen name="Register" component={Register} />
                 <AppStack.Screen name="AuthLogon" component={AuthLogon} />
                 <AppStack.Screen name="Incidents" component={Incidents} />
                 <AppStack.Screen name="Details" component={Details} />

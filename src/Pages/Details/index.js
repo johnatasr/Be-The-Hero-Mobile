@@ -62,7 +62,8 @@ export default function Details() {
         
         if ( response.status == 200 ) {
             modalizeRef.current.close();
-            sendWhatsApp()
+            // Send whats message
+            // sendWhatsApp()
             setValor('')
             setAlert(false)
         } else {

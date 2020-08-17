@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Image } from 'react-native'
-import { StatusBar, ActivityIndicator, AsyncStorage } from 'react-native'
+import { Image, Text } from 'react-native'
+import { StatusBar, ActivityIndicator, AsyncStorage, TouchableOpacity } from 'react-native'
 
 import axios from 'axios'
 
+import { Feather } from '@expo/vector-icons';
 import ImagemLogo from '../../assets/logo_login.png'
 
 import {
@@ -29,6 +30,10 @@ export default function Logon({ navigation }) {
     await AsyncStorage.setItem('@ListApp:refreshToken', JSON.stringify(refreshToken))
   }
 
+  function createUser() {
+    navigation.navigate('Register')
+  }
+
   async function signIn() {
     if (username.length === 0) return
 
@@ -46,7 +51,6 @@ export default function Logon({ navigation }) {
             'Content-Type': 'application/json'
         }})
         
-      
 
       const acessToken = response.data.access
       const refreshToken = response.data.refresh
@@ -57,8 +61,6 @@ export default function Logon({ navigation }) {
       setLoading(false)
         
     } catch (err) {
-      console.log(err)
-      console.log(navigation)
       setLoading(false)
       setErrorMessage('Não foi possível fazer login')
       
@@ -108,6 +110,13 @@ export default function Logon({ navigation }) {
             <ButtonText>Prosseguir</ButtonText>
           )}
         </Button>
+
+        <TouchableOpacity
+            style={{ marginLeft: 80, marginTop: 30, flexDirection: 'row' }}
+            onPress={() => createUser()}>
+            <Text style={{ color: '#fff', fontSize: 18 }}>Não tenho cadastro</Text>
+            <Feather style={{ marginLeft: 10,  }} name="arrow-right" size={30} color="#E02041" />
+        </TouchableOpacity>
       </Form>
     </Container>
   )
